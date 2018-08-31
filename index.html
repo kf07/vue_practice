@@ -7,10 +7,8 @@
 </head>
 <body>
 <div id="app">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink"/>
-    </svg>
-    <input type="range" min="0" max="100" v-model="radius">
+    <div v-if="ok">v-if条件による描画</div>
+    <div v-show="ok">v-show条件による表示</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 <script src="main.js"></script>
