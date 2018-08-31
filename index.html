@@ -7,8 +7,11 @@
 </head>
 <body>
 <div id="app">
-    <div v-if="ok">v-if条件による描画</div>
-    <div v-show="ok">v-show条件による表示</div>
+    <ul>
+        <li v-for="item in list" v-bind:key="item.id">
+            ID.{{item.id}} {{item.name}} HP.{{item.hp}}
+        </li>
+    </ul>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 <script src="main.js"></script>
