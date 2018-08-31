@@ -8,8 +8,11 @@
 <body>
 <div id="app">
     <ul>
-        <li v-for="item in list" v-bind:key="item.id">
+        <li v-for="item in list"
+            v-bind:key="item.id"
+            v-bind:class="{ tuyoi:item.hp > 300}">
             ID.{{item.id}} {{item.name}} HP.{{item.hp}}
+            <span v-if="item.hp > 300">つよい！</span>
         </li>
     </ul>
 </div>
