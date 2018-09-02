@@ -5,7 +5,11 @@ const app = new Vue({
         text: 'Vue',
         list:[],
         message: 'Vue.js',
-        url: 'https://jp.vuejs.org'
+        url: 'https://jp.vuejs.org',
+        val: 'true',
+        val2: 'yes',
+        val3:[],
+        preview:''
     },
     methods: {
         doAdd: function(){
@@ -34,7 +38,14 @@ const app = new Vue({
         },
         handler: function(comment) {
             console.log(comment)
+        },
+        handleChange: function(event) {
+            var file = event.target.files[0]
+            if (file) {
+                this.preview = window.URL.createObjectURL(file)
+            }
         }
+
     },
     created:function(){
         axios.get('list.json').then(function(response) {

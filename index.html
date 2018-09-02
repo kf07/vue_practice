@@ -47,12 +47,29 @@
     <p>.self (event.targetが自分自身のときだけうごく)　モーダルウインドウの背景をクリックして閉じる場合などに使用</p>
     <p>.native(DOMイベントでも$emitを使用しなければ呼び出されなくなる)</p>
     <p>passive(event.preventDefault()を呼び出さないことを明示的にする)</p>
-    <h2>キー修飾子 複数した場合はOR</h2>
+    <h3>キー修飾子 複数した場合はOR</h3>
     <p>up,down,left,rightを指定していずれかの矢印キーが押されたとき</p>
     <input v-on:keydown.up.down.left.right="handler">
-    <h2>システム修飾子</h2>
+    <h3>システム修飾子</h3>
     <p>対応するキーが押されている場合にのみハンドラーが呼び出される</p>
     <button v-on:click.shift="handler">Shiftを押しながらクリックした場合にのみイベント</button>
+    <h2>フォーム入力バインディング</h2>
+    <p>v-modelでデータバインディング、イベントハンドリング、データの反映を自動化</p>
+    <input v-model="message">
+    <p>{{message}}</p>
+    <textarea v-model="message"></textarea>
+    <p>単一要素</p>
+    <label><input type="checkbox" v-model="val">{{val}}</label>
+    <p>単一要素に値を設定する場合</p>
+    <label><input type="checkbox" v-model="val2" true-value="yes" false-value="no">{{val2}}</label>
+    <p>複数要素 チェックしているチェックボックスの値が配列に格納される</p>
+    <label><input type="checkbox" v-model="val3" value="A"> A</label>
+    <label><input type="checkbox" v-model="val3" value="B"> B</label>
+    <label><input type="checkbox" v-model="val3" value="C"> C</label>
+    <p>画像ファイル</p>
+    <input type="file" v-on:change="handleChange">
+    <div v-if="preview"><img v-bind:src="preview"></div>
+
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
