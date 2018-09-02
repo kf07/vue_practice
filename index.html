@@ -24,6 +24,29 @@
     <p v-text="message"></p>
     <button v-on:click="handleClick">クリック</button>
     <input v-bind:value="message" v-on:input="handleInput">
+    <div v-on:click.right="handler">example</div>
+    <div v-on:click.right.prevent="handler">右クリックしたときのメニューを表示させない</div>
+    <p>.stop(イベントを連鎖させない)</p>
+    <div v-on:click="handler('div1')">
+        div1
+        <a href="#top" v-on:click.stop="handler('div2')">div2</a>
+    </div>
+    <p>.prevent（リンクの）遷移などの処理をキャンセル）ハッシュが更新されない</p>
+    <div v-on:click="handler('div1')">
+        div1
+        <a href="#top" v-on:click.prevent="handler('div2')">div2</a>
+    </div>
+    <p>.capture(captureを指定したイベントが先にうごく)</p>
+    <div v-on:click.capture="handler('div1')">
+        div1
+        <div v-on:click="handler('div2')">
+            div2
+            <div v-on:click="handler('div3')">div3</div>
+        </div>
+    </div>
+    <p>.self (event.targetが自分自身のときだけうごく)　モーダルウインドウの背景をクリックして閉じる場合などに使用</p>
+    <p>.native(DOMイベントでも$emitを使用しなければ呼び出されなくなる)</p>
+    <p>passive(event.preventDefault()を呼び出さないことを明示的にする)</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>

@@ -31,6 +31,9 @@ const app = new Vue({
         handleInput: function(event){
             console.log(event)
             this.message = event.target.value;
+        },
+        handler: function(comment) {
+            console.log(comment)
         }
     },
     created:function(){
