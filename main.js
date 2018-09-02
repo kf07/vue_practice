@@ -2,12 +2,8 @@ const app = new Vue({
     el:'#app',
     data: {
         name: 'キマイラ',
-        list: [
-            {id:1,name:'スライム',hp:100},
-            {id:2,name:'ゴブリン',hp:200},
-            {id:3,name:'ドラゴン',hp:500}
-        ],
-        text: 'Vue'
+        text: 'Vue',
+        list:[]
     },
     methods: {
         doAdd: function(){
@@ -28,5 +24,12 @@ const app = new Vue({
             this.list[index].hp -= 10;
         }
     },
+    created:function(){
+        axios.get('list.json').then(function(response) {
+            this.list = response.data
+        }.bind(this)).catch(function(e){
+            console.log(error(e))
+        })
+    }
 });
 
