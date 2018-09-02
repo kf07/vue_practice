@@ -47,6 +47,12 @@
     <p>.self (event.targetが自分自身のときだけうごく)　モーダルウインドウの背景をクリックして閉じる場合などに使用</p>
     <p>.native(DOMイベントでも$emitを使用しなければ呼び出されなくなる)</p>
     <p>passive(event.preventDefault()を呼び出さないことを明示的にする)</p>
+    <h2>キー修飾子 複数した場合はOR</h2>
+    <p>up,down,left,rightを指定していずれかの矢印キーが押されたとき</p>
+    <input v-on:keydown.up.down.left.right="handler">
+    <h2>システム修飾子</h2>
+    <p>対応するキーが押されている場合にのみハンドラーが呼び出される</p>
+    <button v-on:click.shift="handler">Shiftを押しながらクリックした場合にのみイベント</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
