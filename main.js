@@ -24,6 +24,9 @@ const app = new Vue({
         },
         doAttack: function(index){
             this.list[index].hp -= 10;
+        },
+        handleClick: function(){
+            alert('クリックしたよ')
         }
     },
     created:function(){
