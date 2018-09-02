@@ -3,7 +3,9 @@ const app = new Vue({
     data: {
         name: 'キマイラ',
         text: 'Vue',
-        list:[]
+        list:[],
+        message: 'Vue.js',
+        url: 'https://jp.vuejs.org'
     },
     methods: {
         doAdd: function(){
