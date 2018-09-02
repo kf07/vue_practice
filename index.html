@@ -69,6 +69,10 @@
     <p>画像ファイル</p>
     <input type="file" v-on:change="handleChange">
     <div v-if="preview"><img v-bind:src="preview"></div>
+    <p>HTML5の入力タイプ</p>
+    <p>range</p>
+    <input type="range" v-model.number="val4">{{val4}}
+
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
