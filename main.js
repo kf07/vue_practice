@@ -27,6 +27,10 @@ const app = new Vue({
         },
         handleClick: function(){
             alert('クリックしたよ')
+        },
+        handleInput: function(event){
+            console.log(event)
+            this.message = event.target.value;
         }
     },
     created:function(){
