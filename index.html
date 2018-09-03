@@ -72,7 +72,12 @@
     <p>HTML5の入力タイプ</p>
     <p>range</p>
     <input type="range" v-model.number="val4">{{val4}}
-
+    <h3>修飾子</h3>
+    <p>.number（数値に変換してから代入）</p>
+    <input type="text" v-model.number="price">{{price}}
+    <p>.lazy（changeイベント　フォーカスが外れるかenterが押されたら同期）</p>
+    <input type="text" v-model.lazy="test"> {{test}}
+    <p>.trim(文字列の前後につく改行やスペースを削除してから代入)</p>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>

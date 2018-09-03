@@ -10,7 +10,9 @@ const app = new Vue({
         val2: 'yes',
         val3:[],
         preview:'',
-        val4:'50'
+        val4:'50',
+        price: 100,
+        test:''
     },
     methods: {
         doAdd: function(){
