@@ -7,12 +7,11 @@
 </head>
 <body>
 <div id="app">
-    <select v-model="current">
-        <option v-for="topic in topics" v-bind:value="topic.value">
-            {{topic.name}}
-        </option>
-    </select>
-    <div v-for="item in list">{{item.full_name}}</div>
+    <p>対象のデータ　| フィルタの名前</p>
+    <p>{{ price | localeNum }}円</p>
+    <p>フィルタに引数を持たせる</p>
+    <p>{{ message | filter('foo',100) }}</p>
+    <p>180度は{{180|radian|round}}ラジアンだよ</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
