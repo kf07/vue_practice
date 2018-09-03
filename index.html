@@ -5,17 +5,14 @@
     <title>Vue</title>
     <link href="main.css" rel="stylesheet">
 </head>
-<body style="height: 1200px">
-<div id="app" v-cloak>
-    <input v-model.number="budget">円以下に絞り込む
-    <input v-model.number="limit">件を表示
-    <button v-on:click="order=!order">切り替え</button>
-    <p>{{matched.length}}件中{{limited.length}}件を表示中</p>
-    <ul>
-        <li v-for="item in limited" v-bind:key="item.id">
-            {{item.name}}　{{item.price}}円
-        </li>
-    </ul>
+<body>
+<div id="app">
+    <select v-model="current">
+        <option v-for="topic in topics" v-bind:value="topic.value">
+            {{topic.name}}
+        </option>
+    </select>
+    <div v-for="item in list">{{item.full_name}}</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
