@@ -1,6 +1,11 @@
 Vue.component('comp-child',{
-    template: '<li>{{ name }} HP.{{ hp }}</li>',
-    props: ['name','hp']
+    template: '<li>{{ name }} HP.{{ hp }}<button v-on:click="doAttack">攻撃する</button></li>',
+    props: ['name','hp'],
+    methods: {
+        doAttack: function(){
+            this.hp -=10
+        }
+    }
 });
 
 new Vue({
