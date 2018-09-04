@@ -1,24 +1,15 @@
-Vue.component('my-component',{
-    template: '<p><comp-child></comp-child></p>',
-    //データはオブジェクトを返す関数
-    data: function(){
-        return {
-            message: 'Hello Vue.js'
-        }
-    },
-    method: {
-        //メソッドや算出プロパティ、ウォッチャなどの定義方法は
-        //ルートコンストラクタのオプションと同じ
-    }
-})
-
-Vue.component('comp-child', {
-    template: '<p> {{val}} </p>',
-    props: ['val']
-})
-
-new Vue ({
-    el: '#app',
-    components: {
-    }
+Vue.component('comp-child',{
+    template: '<li>{{ name }} HP.{{ hp }}</li>',
+    props: ['name','hp']
 });
+
+new Vue({
+    el: '#app',
+    data: {
+        list: [
+            { id:1,name:'スライム',hp:100 },
+            { id:2,name:'ゴブリン',hp:200 },
+            { id:3,name:'ドラゴン',hp:500 }
+        ]
+    }
+})

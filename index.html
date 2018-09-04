@@ -7,8 +7,12 @@
 </head>
 <body>
 <div id="app">
-    <comp-child val="これはA子"></comp-child>
-    <comp-child val="これはb子"></comp-child>
+    <ul>
+        <comp-child v-for="item in list"
+                    v-bind:key="item.id"
+                    v-bind:name="item.name"
+                    v-bind:hp="item.hp"></comp-child>
+    </ul>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
