@@ -7,11 +7,10 @@
 </head>
 <body>
 <div id="app">
-    <p>対象のデータ　| フィルタの名前</p>
-    <p>{{ price | localeNum }}円</p>
-    <p>フィルタに引数を持たせる</p>
-    <p>{{ message | filter('foo',100) }}</p>
-    <p>180度は{{180|radian|round}}ラジアンだよ</p>
+    <button v-on:click="list.push(list.length + 1)">追加</button>
+    <ul ref="list">
+        <li v-for="item in list">{{item}}</li>
+    </ul>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
