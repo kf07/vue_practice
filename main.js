@@ -1,20 +1,19 @@
 Vue.component('comp-child',{
-    template: '<li>{{ name }} HP.{{ hp }}<button v-on:click="doAttack">攻撃する</button></li>',
-    props: ['name','hp'],
+    template: '<button v-on:click="handleClick">イベント発火</button>',
     methods: {
-        doAttack: function(){
-            this.hp -=10
+        //ボタンのクリックイベントのハンドラでchilds-eventを発火する
+        handleClick: function () {
+            this.$emit('childs-event')
         }
     }
 });
 
 new Vue({
     el: '#app',
-    data: {
-        list: [
-            { id:1,name:'スライム',hp:100 },
-            { id:2,name:'ゴブリン',hp:200 },
-            { id:3,name:'ドラゴン',hp:500 }
-        ]
+    methods: {
+        //childs-eventが発生した！
+        parentsMethod: function () {
+            alert('イベントをキャッチ！')
+        }
     }
 })
