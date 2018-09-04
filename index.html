@@ -7,10 +7,7 @@
 </head>
 <body>
 <div id="app">
-    <button v-on:click="list.push(list.length + 1)">追加</button>
-    <ul ref="list">
-        <li v-for="item in list">{{item}}</li>
-    </ul>
+    <my-component></my-component>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
