@@ -7,7 +7,12 @@
 </head>
 <body>
 <div id="app">
-    <comp-child v-on:childs-event="parentsMethod" />
+    <ul>
+        <comp-child v-for="item in list"
+                    v-bind:key="item.id"
+                    v-bind="item"
+                    v-on:attack="handleAttack"></comp-child>
+    </ul>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
