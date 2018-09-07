@@ -7,12 +7,13 @@
 </head>
 <body>
 <div id="app">
-    <ul>
-        <comp-child v-for="item in list"
-                    v-bind:key="item.id"
-                    v-bind="item"
-                    v-on:attack="handleAttack"></comp-child>
-    </ul>
+    <button v-on:click="order=!order">切り替え</button>
+    <!--transition-groupタグに指定した属性はラップ要素に付与される-->
+    <transition-group tag="ul">
+        <li v-for="item in sortedList" v-bind:key="item.id">
+            {{item.name}}{{item.price}}円
+        </li>
+    </transition-group>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>

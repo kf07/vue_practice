@@ -1,20 +1,15 @@
-.v-enter-active,
-.v-leave-active {
-    transition: opacity 1s;
+[v-cloak] {
+    display: none;
+}
+.v-enter-active,.v-leave-active {
+    transition: 1s;
 }
 
-.v-enter, .v-leave-to {
+
+.v-leave-to,.v-enter {
     opacity: 0;
 }
 
-@keyframes cloak-in {
-    0% { opacity: 0; }
-}
-
-#app {
-    animation: cloak-in 1s;
-}
-
-#app[v-cloak] {
-    opacity: 0;
+.v-move {
+    transition: transform 5s ease-out;
 }
